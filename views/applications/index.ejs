@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/_header.ejs') %>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="all-apps-body">
+      <div class="all-apps-header">
+        <h1>Your Apps</h1>
+        <a href="/users/<%=user._id%>/applications/new" class="add-app-link">Add an App</a>
+      </div>
+      <ul>
+        <% applications.forEach((application)=>{ %>
+        <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+          <li><%= application.title %> at <%= application.company %></li>
+        </a>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
