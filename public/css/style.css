@@ -216,3 +216,6 @@ select {
   height: 100%;
 }
 
+form  input:invalid {
+  border: 1px solid #ce4866;
+}

@@ -29,7 +29,15 @@ router.get('/new', async (req, res) => {
 
 // CREATE
 router.post('/', async (req, res) => {
+  const {company, title} = req.body
   try{
+    
+    if (!company.trim()){
+      throw new Error('Please provide a valid Company Name')
+    }
+    if (!title.trim()){
+      throw new Error("Please provide a valid Title")
+    }
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
     // Push req.body (the new form data object) to the applications array of the current user
@@ -41,7 +49,12 @@ router.post('/', async (req, res) => {
   } catch (error) {
     // If any errors, log them and redirect back home
     console.log(error);
-    res.redirect('/')
+    req.session.message = error.message;
+
+    req.session.save(() => {
+      res.redirect(`/users/${req.session.user._id}/applications/new`);
+    });
+    
   }
 })
 

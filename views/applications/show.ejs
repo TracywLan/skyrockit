@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= application.title %></title>
-    <link rel="stylesheet" href="/stylesheets/css/show.css" />
-    <script defer src="/js/script.js"></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= application.title %></title>
+        <link rel="stylesheet" href="/css/show.css" />
+        <script defer src="/js/script.js"></script>
+    </head>
     <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="show-body">
@@ -14,17 +14,19 @@
         <h1><%= application.title %> at <%= application.company %></h1>
         <div class="show-sidebar">
             <div class="show-actions">
-            <a
-                href="/users/<%= user._id %>/applications/<%= application._id %>/edit"
-            >
-                Edit App
-            </a>
-            <form
-                action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
-                method="POST"
-            >
-                <button type="submit">Delete App</button>
-            </form>
+                <a
+                    href="/users/<%= user._id %>/applications/<%= application._id %>/edit"
+                >
+                    Edit App
+                </a>
+                <form
+                    action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
+                    method="POST"
+                    id="delete-form"
+                    class="delete-form"
+                >
+                    <button type="submit">Delete App</button>
+                </form>
             </div>
             <p>Current Status: <%= application.status %></p>
         </div>

@@ -11,6 +11,7 @@ const MongoStore = require('connect-mongo')
 const isSignedIn = require('./middleware/is-signed-in')
 const passUserToView = require('./middleware/pass-user-to-view')
 const applicationController = require('./controllers/applications')
+const passMessageToView = require('./middleware/pass-message-to-view')
 
 // Middlewares
 require("./db/connection");
@@ -34,6 +35,7 @@ app.use(
     }
   })
 );
+app.use(passMessageToView)
 
 // Routes
 app.use(passUserToView)

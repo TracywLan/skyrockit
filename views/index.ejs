@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skyrockit</title>
-    <link rel="stylesheet" href="/stylesheets/css/style.css" />
-    <script defer src="/public/stylesheets/js/script.js"></script>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/js/script.js"></script>
   </head>
-<body class="index-body">
-  <%- include('./partials/_navbar.ejs') %>
-  <div class="index-container">
-    <div class="text-container">
-      <h1 class="main-header">Skyrockit</h1>
-      <p class="subheader">A job application tracker.</p>
+  <body class="index-body">
+    <%# include('./partials/_navbar.ejs') %>
+    <div class="index-container">
+      <div class="text-container">
+        <h1 class="main-header">Skyrockit</h1>
+        <p class="subheader">A job application tracker.</p>
+      </div>
+      <div class="auth-links">
+        <a class="signup-link" href="/auth/sign-up">Sign up</a>
+        <a class="signin-link" href="/auth/sign-in">Sign in</a>
+      </div>
     </div>
-    <div class="auth-links">
-      <a class="signup-link" href="/auth/sign-up">Sign Up</a>
-      <a class="signin-link" href="/auth/sign-in">Sign In</a>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
