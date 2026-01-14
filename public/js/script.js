@@ -35,7 +35,6 @@ deleteForm && deleteForm.addEventListener("submit", (event) => {
   // Delete button
   deleteButton.addEventListener("click", async () => {
     try {
-      console.log("Delete fired");
       const response = await fetch(event.target.action, { method: "DELETE" }); // sends DELETE request to your form's action URL
       // event.target.action = the form's action URL (like /users/6967b9b2ae289d2e2e26130b)
 

@@ -53,5 +53,5 @@ app.use(isSignedIn);
 app.use('/users/:userId/applications', applicationController)
 
 app.listen(PORT, () => {
-  console.log("This ship sailing on port", PORT);
+
 });

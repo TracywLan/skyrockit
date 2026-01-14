@@ -219,3 +219,7 @@ select {
 form  input:invalid {
   border: 1px solid #ce4866;
 }
+
+#star{
+  border: 1px solid #ce4866;
+}

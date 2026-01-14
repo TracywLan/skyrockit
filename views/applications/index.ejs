@@ -8,12 +8,15 @@
         <h1>Your Apps</h1>
         <a href="/users/<%=user._id%>/applications/new" class="add-app-link">Add an App</a>
       </div>
+      <% if(applications.length === 0) { %>
+            <h4>Please click "Add an App" to add your first application</h4>
+        <% } %>
       <ul>
-        <% applications.forEach((application)=>{ %>
-        <a href="/users/<%= user._id %>/applications/<%= application._id %>">
-          <li><%= application.title %> at <%= application.company %></li>
-        </a>
-        <% }) %>
+          <% applications.forEach((application)=>{ %>
+            <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+              <li><%= application.title %> at <%= application.company %></li>
+            </a>
+          <% }) %>
       </ul>
     </div>
   </body>

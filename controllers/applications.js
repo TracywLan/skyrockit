@@ -78,8 +78,6 @@ router.get('/:applicationId', async (req, res) => {
 });
 
 // UPDATE
-// controllers/applications.js
-
 router.get('/:applicationId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -94,10 +92,15 @@ router.get('/:applicationId/edit', async (req, res) => {
 });
 
 // Add this after your GET '/:applicationId/edit' route
-// controllers/applications.js`
-
 router.put('/:applicationId', async (req, res) => {
+  const { company, title } = req.body;
   try {
+    if (!company.trim()){
+      throw new Error('Please provide a valid Company Name')
+    }
+    if (!title.trim()){
+      throw new Error("Please provide a valid Title")
+    }
     // Find the user from req.session
     const currentUser = await User.findById(req.session.user._id);
     // Find the current application from the id supplied by req.params
